@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicaSet
+metadata:
+  name: myfirstReplicaSet
+  labels:
+    app: no-app
+    env: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      env: test               # matchLabels should match to pod label to integrate
+  template:                   # pod template start
+    metadata:
+      env: test               # matchLabels should match to pod label to integrate
+    spec:
+      containers:
+         - name: nginx
+           imgage: nginx:1.14.2

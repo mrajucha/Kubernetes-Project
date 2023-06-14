@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myfirstPod
+  labels:
+    app: no-app
+    env: test
+spec:
+  containers:
+    - name: nginx      # containers property is a list to add multiple container
+      imgage: nginx:1.14.2  #image name and version
+
