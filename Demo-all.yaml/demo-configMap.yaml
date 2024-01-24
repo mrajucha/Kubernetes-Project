@@ -1,0 +1,12 @@
+apiVersion: v1 
+kind: ConfigMap
+metadata: 
+  name: demo-config
+  label: demo
+  env: test
+Data:           #does not have spec property
+  aws-storage-dashboard.json | -
+
+  {
+  
+  }

@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind : Deployment
+metadata: 
+  name: demo-deployment
+  namespace: demo
+  env: test
+
+spec:
+  replicas : 3
+  selector:
+    matchLabels: 
+      env: test
+  strategy: 
+    type : RollingUpdate   
+  template:  #Pod template
+    metadata: 
+      env: test
+    spec:
+      containers: 
+      - name : nginx
+        image: nginx:123
+        resources: 
+          limits:
+           cpu: 3
+           memory: 2Gi
+          request:
+            cpu: 2
+            memory: 1 2Gi
+
+      volumes:
+      - name: data
+        PersistentVolumeClaim: 
+          claimName: demo-pvc
+      - name: Config-volume
+        configMap:
+          name: demo-config
+                
+
+              
+
+
+            
+            
+             
+
+       
+

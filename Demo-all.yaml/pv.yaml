@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: PersistentVolume
+metadata:
+  name: nginx-pv
+  label: demo
+  env: test
+
+spec:
+  capacity: 
+    storage: 2Gi
+  accessModes: 
+   - ReadAndWriteOnce
+  hostPath: 
+    path: /mnt/data    
+
+
+
+#####################################
+
+apiVersion: v1 
+kind: PersistentVolume
+metadata: 
+  name: demo-pv
+  label: demo
+  env: test
+spec:
+  capacity:
+     storage: 4Gi
+  accessModes:
+  - ReadAndWriteOnce
+       

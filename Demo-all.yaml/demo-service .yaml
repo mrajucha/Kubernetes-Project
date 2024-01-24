@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: dmeo
+  env: test
+
+spec:
+  selector: 
+    env: test
+  ports:
+    - ports: 80
+    - targetPort: 8080
+  type: LoadBalancer      
